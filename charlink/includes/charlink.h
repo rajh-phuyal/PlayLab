@@ -16,7 +16,7 @@ typedef enum data_type
 typedef struct node
 {
     char			*key;
-    char			*value;
+    void			*value;
     struct s_node	*next;
 }	node;
 
@@ -39,8 +39,8 @@ typedef struct link_table
     data_type   type;
 }	link_table;
 
-// CRUD functions
-void            charlink_delete(link_table *table);
+// create and delete
+void            charlink_delete(link_table *table, bool freeval);
 link_table      *charlink_create(data_type type, int size, bool overwrite);
 
 

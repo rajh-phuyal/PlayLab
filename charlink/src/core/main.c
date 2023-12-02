@@ -31,7 +31,7 @@ link_table  *charlink_create(data_type type, int size, bool overwrite)
     return table;
 }
 
-void    charlink_delete(link_table *table)
+void    charlink_delete(link_table *table, bool freeval)
 {
     free(table);
     return;
@@ -40,8 +40,8 @@ void    charlink_delete(link_table *table)
 
 int main(void)
 {
-    link_table *table = charlink_create(INT, 10, true);
-    printf("Hash %d\n", hash("some shit"));
-    printf("Hash %d\n", hash("some shit again"));
-    charlink_delete(table);
+    link_table *table = charlink_create(CHAR, 10, true);
+    printf("Hash %d\n", hash("someshit"));
+    printf("Hash %d\n", hash("someshitagain"));
+    charlink_delete(table, true);
 }
